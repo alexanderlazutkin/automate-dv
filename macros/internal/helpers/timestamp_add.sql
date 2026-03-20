@@ -44,4 +44,21 @@
 
 {% endmacro %}
 
+{% macro duckdb__timestamp_add(datepart, interval, from_date_or_timestamp) %}
+
+{%- if datepart in ['day', 'week', 'month', 'quarter', 'year'] -%}
+    {{ automate_dv.dateadd('millisecond', 86399999, from_date_or_timestamp) }}
+{%- elif datepart == 'microsecond' -%}
+    {{ automate_dv.dateadd('microsecond', 1, from_date_or_timestamp) }}
+{%- elif datepart == 'millisecond' -%}
+    {{ automate_dv.dateadd('microsecond', 999, from_date_or_timestamp) }}
+{%- elif datepart == 'second' -%}
+    {{ automate_dv.dateadd('millisecond', 999, from_date_or_timestamp) }}
+{%- elif datepart == 'minute' -%}
+    {{ automate_dv.dateadd('millisecond', 5999, from_date_or_timestamp) }}
+{%- elif datepart == 'hour' -%}
+    {{ automate_dv.dateadd('millisecond', 3599999, from_date_or_timestamp) }}
+{%- endif -%}
+
+{% endmacro %}
 

@@ -57,6 +57,8 @@ Learn quickly with our worked example:
 
 [Platform support matrix](https://automate-dv.readthedocs.io/en/latest/platform_support/)
 
+This repository now includes adapter-dispatched macros for DuckDB (`duckdb__*`) across table templates and supporting helpers.
+
 ## Installation
 
 Check [dbt Hub](https://hub.getdbt.com/Datavault-UK/automate_dv/latest/) for the latest installation instructions, 

@@ -22,3 +22,7 @@
 {%- macro databricks__type_string() -%}
     STRING
 {%- endmacro -%}
+
+{%- macro duckdb__type_string() -%}
+    VARCHAR
+{%- endmacro -%}

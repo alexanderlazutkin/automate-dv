@@ -49,3 +49,7 @@
     BINARY
   {%- endif -%}
 {%- endmacro -%}
+
+{%- macro duckdb__type_binary(for_dbt_compare=false) -%}
+    BLOB
+{%- endmacro -%}

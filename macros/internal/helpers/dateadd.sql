@@ -24,3 +24,9 @@
     )
 
 {% endmacro %}
+
+{% macro duckdb__dateadd(datepart, interval, from_date_or_timestamp) %}
+
+    CAST({{ from_date_or_timestamp }} AS TIMESTAMP) + (INTERVAL 1 {{ datepart }} * {{ interval }})
+
+{% endmacro %}

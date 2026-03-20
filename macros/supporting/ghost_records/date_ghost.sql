@@ -26,3 +26,13 @@
     {%- endif -%}
 
 {%- endmacro -%}
+
+{%- macro duckdb__date_ghost(date_type, alias=none) -%}
+
+    {%- if date_type == 'date' -%}
+        {{ automate_dv.cast_date('1900-01-01', as_string=true, datetime=false, alias=alias) }}
+    {%- else -%}
+        CAST('1900-01-01 00:00:00' AS TIMESTAMP){%- if alias %} AS {{alias}}{%- endif -%}
+    {%- endif -%}
+
+{%- endmacro -%}

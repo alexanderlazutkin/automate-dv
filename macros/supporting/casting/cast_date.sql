@@ -69,3 +69,16 @@
     {%- if alias %} AS {{ alias }} {%- endif %}
 
 {%- endmacro -%}
+
+
+{%- macro duckdb__cast_date(column_str, as_string=false, alias=none) -%}
+
+    {%- if not as_string -%}
+        CAST({{ column_str }} AS DATE)
+    {%- else -%}
+        CAST('{{ column_str }}' AS DATE)
+    {%- endif -%}
+
+    {%- if alias %} AS {{ alias }} {%- endif %}
+
+{%- endmacro -%}
