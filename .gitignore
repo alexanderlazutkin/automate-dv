@@ -1,4 +1,7 @@
-
 .idea/
-
 invoke.yml
+target/
+dbt_packages/
+logs/
+.venv/
+logs/dbt.log

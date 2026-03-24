@@ -33,6 +33,7 @@
 Для каждого макроса из [`automate-dv/macros/tables/duckdb/`](automate-dv/macros/tables/duckdb):
 - [`duckdb__hub()`](automate-dv/macros/tables/duckdb/hub.sql:6)
 - [`duckdb__link()`](automate-dv/macros/tables/duckdb/link.sql:6)
+- [`duckdb__eff_link()`](automate-dv/macros/tables/duckdb/eff_link.sql:6)
 - [`duckdb__sat()`](automate-dv/macros/tables/duckdb/sat.sql:6)
 - [`duckdb__eff_sat()`](automate-dv/macros/tables/duckdb/eff_sat.sql:6)
 - [`duckdb__ma_sat()`](automate-dv/macros/tables/duckdb/ma_sat.sql:6)
@@ -110,4 +111,3 @@ dbt test --target duckdb
 - Разнести текущий smoke в отдельный `schema.yml`-набор generic tests.
 - Добавить фикстуры с «эталонными» expected-таблицами и сравнение через equality-тест.
 - Добавить CI-job `duckdb` (отдельный workflow) с последовательностью `dbt seed/run/test`.
-
